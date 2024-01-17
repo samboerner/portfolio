@@ -19,3 +19,15 @@ function opentab(contentName, title){
     document.getElementById(title).classList.add("active-link");
     document.getElementById(contentName).classList.add("active-tab");
 }
+
+/**
+ * These functions open and close the side menu on smaller screens;
+ */
+var menu = document.getElementById("menu");
+
+function openmenu(){
+    menu.style.right = "0";
+}
+function closemenu(){
+    menu.style.right = "-200px";
+}
