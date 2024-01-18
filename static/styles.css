@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: #2d2e2e;
     color: #fff;
@@ -344,4 +348,8 @@ nav .fa-solid{
     .copyright{
         font-size: 14px;
     }
+}
+
+#msg{
+    color: #42f55d;
 }
