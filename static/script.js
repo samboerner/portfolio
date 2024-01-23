@@ -31,3 +31,16 @@ function openmenu(){
 function closemenu(){
     menu.style.right = "-200px";
 }
+
+msg = document.getElementById("msg")
+$(document).on('submit','#contact-form',function(e){
+    e.preventDefault();
+    $.ajax({
+        type:'POST',
+        url:'/',
+        success:function()
+        {
+            alert('success');
+        }
+    })
+});
