@@ -16,11 +16,8 @@ def index():
                         (name, email, message))
             db.commit()
         
-        confirmation = "Your message has been sent!"
-        
-        return render_template('index.html', confirmation=confirmation)
-    else:
-        return render_template('index.html')
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run()
