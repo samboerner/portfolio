@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
+from flask_mail import Mail, Message
+from config import app, mail
 import sqlite3
 
 app = Flask(__name__)
@@ -15,8 +17,20 @@ def index():
             cursor.execute("INSERT INTO messages (name,email,message) VALUES (?,?,?)",
                         (name, email, message))
             db.commit()
+
+        sendMail(name, email, message)    
         
     return render_template('index.html')
+
+
+def sendMail(name, email, message):
+    msg = Message(f"New Message from {name} on samboerner.com",
+                  sender = "",
+                  recipients=[""])
+    
+    msg.body = f"You have a new message.\nName: {name}\nEmail: {email}\nMessage: {message}"
+
+    mail.send(msg)
 
 
 if __name__ == '__main__':
