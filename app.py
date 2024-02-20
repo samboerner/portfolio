@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
-import sqlite3
 import os
 from dotenv import load_dotenv
 
@@ -14,7 +13,7 @@ app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('DEFAULT_SENDER')
 
 mail = Mail(app)
 
@@ -26,16 +25,9 @@ def index():
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-
-        # Insert form data into database
-        with sqlite3.connect('database.db') as db:
-            cursor = db.cursor()
-            cursor.execute("INSERT INTO messages (name,email,message) VALUES (?,?,?)",
-                        (name, email, message))
-            db.commit()
         
         # Send email from form submission
-        msg = Message(f"New Message from {name} on samboerner.com",
+        msg = Message(f"New Message from {name} on SamBoerner.com",
                         recipients=[os.getenv('MAIL_RECIPIENT')])
         msg.body = f"You have a new message.\nName: {name}\nEmail: {email}\nMessage: {message}"
         mail.send(msg)       
