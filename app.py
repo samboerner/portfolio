@@ -4,7 +4,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
 
 # Configuration for Flask Mail
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
