@@ -27,8 +27,8 @@
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>Software Developer</p>
-                <h1>Hello, I'm <span>Sam</span></h1>
+                <h1>Hello, Im <span class="typing"></span></h1>
+                <p>A Software Developer</p>
             </div>
         </div>
     </div>
@@ -41,14 +41,24 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                        when an unknown printer took a galley of type and scrambled it to make a type 
-                        specimen book. It has survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged. It was popularised 
-                        in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
-                        passages, and more recently with desktop publishing software like Aldus 
-                        PageMaker including versions of Lorem Ipsum.
+                    <p>
+                        My name is Sam Boerner, and I am a software developer from Des Moines, Iowa.
+                        I have been programming for around 5 years now. I have developed my skills from my time
+                        studying Computer Science and Management Information Systems at Iowa State University, 
+                        as well as from working on personal projects. My favorite 
+                        language to develop in is Python, but I am well-versed in a variety of other languages and
+                        frameworks.
+                    </p>
+                    <br>
+                    <p>
+                        In my free time, I enjoy watching movies, reading, and working out. I am also a bit of a 
+                        music nerd. I am able to play the piano, guitar, and drums.
+                        I even used to be in a percussion ensemble group that would perform at various locations around Iowa and Nebraska!
+                    </p>
+                    <br>
+                    <p>
+                        Please feel free to take a look around my website and check out some of the projects I've worked on! You can 
+                        also contact me using the form at the bottom.
                     </p>
                     <div class="tab-titles">
                         <p class="tab-links" id="Skills" onclick="opentab('skills', 'Skills')">Skills</p>
@@ -77,37 +87,24 @@
             <h1 class="subtitle">Projects</h1>
             <div class="project-list">
                 <div class="work">
-                    <img src="/static/images/profile.jfif">
+                    <img src="/static/images/portfolio.jpg">
                     <div class="layer">
                         <h2>Personal Portfolio Website</h2>
-                        <p>This is placeholder text do you find it interesting
-                            because I do not.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <p>What you're looking at right now!</p>
+                        <a href="https://github.com/samboerner/portfolio" target="_blank"><i class="fa-brands fa-github"></i></a>    
                     </div>
                 </div>
                 <div class="work">
-                    <img src="/static/images/profile.jfif">
+                    <img src="/static/images/spotify-yt.png">
                     <div class="layer">
-                        <h2>Sam-PDF: A simple PDF converter</h2>
-                        <p>This is placeholder text do you find it interesting
-                            because I do not.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="/static/images/profile.jfif">
-                    <div class="layer">
-                        <h2>Spotify-Apple-Youtube Playlist Translator</h2>
-                        <p>This is placeholder text do you find it interesting
-                            because I do not.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <h2>Spotify to YouTube Playlist Converter</h2>
+                        <p>A Python Script that allows you to transfer Spotify playlists
+                            to YouTube ones.
+                        </p>
+                        <a href="https://github.com/samboerner/playlist-converter" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">All Projects</a>
         </div>
     </div>
     <!--Contact-->
@@ -121,7 +118,7 @@
                         <a href="https://www.linkedin.com/in/samuel-boerner/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://github.com/samboerner" target="_blank"><i class="fa-brands fa-square-github"></i></a>
                     </div>
-                    <a href="/static/images/SamuelBoernerResume.pdf" download class="btn btn2">Download Resume</a>
+                    <a href="/static/docs/SamBoernerResume.pdf" download class="btn btn2">Download Resume</a>
                 </div>
                 <div class="right">
                     <form method="post" id="contact-form">
@@ -139,6 +136,13 @@
         </div>
     </div>
     <script src="/static/script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        var typed = new Typed('.typing', {
+            strings: ["Sam."],
+            typeSpeed: 200,
+        })
+    </script>
 </body>
 </html>
